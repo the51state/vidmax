@@ -1,0 +1,202 @@
+.blueprint-hero {
+  background-color:#eef0f3;
+  background-image:linear-gradient(#cdd3dc42 1px,transparent 1px),linear-gradient(90deg,#cdd3dc42 1px,transparent 1px);
+  background-size:14px 14px;
+  overflow:hidden;
+}
+.blueprint-content {padding-block:clamp(1.6rem,3.2vw,3rem) 1.8rem}
+.blueprint-hero h1 {font-size:clamp(2.2rem,4.7vw,4.25rem);line-height:1.08;letter-spacing:-.045em;margin:0;padding-bottom:.25em;border-bottom:1px solid #69727c}
+.blueprint-lead {font-size:clamp(1.05rem,2.15vw,1.8rem);line-height:1.4;color:var(--ink);margin:.35em 0 0}
+.blueprint-screw {width:100%;height:clamp(220px,28vw,420px);object-fit:contain;mix-blend-mode:multiply;margin:.4rem auto .6rem}
+.blueprint-actions {display:flex;align-items:center;flex-wrap:wrap;gap:clamp(1.2rem,3.4vw,3.2rem)}
+.blueprint-actions .button {background:var(--orange-text);border-color:var(--orange-text);font-size:clamp(1rem,1.6vw,1.45rem);padding:.65rem 2rem;border-radius:7px}
+.blueprint-actions .button:hover {background:#8f5211;border-color:#8f5211}
+.blueprint-quote {font-size:clamp(1rem,1.6vw,1.45rem);font-weight:720;text-underline-offset:7px;text-decoration-thickness:1px}
+.blueprint-quote:hover {color:var(--orange-text)}
+.blueprint-quote span {margin-left:.35em}
+.production-resources {border-block:1px solid var(--line);background:#fff}
+.production-resources .wrap {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding-block:1rem}
+.production-resources a {display:flex;justify-content:space-between;align-items:center;gap:.6rem;min-height:42px;padding:.25rem 1.6rem;border-inline-end:1px solid #aeb6bf;font-size:clamp(.95rem,1.5vw,1.25rem);font-weight:720;text-decoration:none}
+.production-resources a:first-child {padding-left:0}
+.production-resources a:last-child {border:0;padding-right:0}
+.production-resources a:hover {color:var(--orange-text)}
+.production-products {padding-block:clamp(1.55rem,3.6vw,2.6rem);background:#f8f9fa}
+.production-products h2 {font-size:clamp(1.6rem,3.1vw,2.45rem)}
+.production-products .product-card {background:#fff;border-radius:8px}
+.production-products .home-product-visual {background:#eef0f2;isolation:isolate;flex:none}
+.production-products .home-product-visual img {display:block;width:100%;height:90px;object-fit:contain;padding:.55rem;background:transparent;mix-blend-mode:multiply}
+.production-products .product-card span {align-items:center}
+@media (max-width:680px) {
+ .blueprint-content {padding-block:1.5rem}
+ .blueprint-hero h1 {font-size:clamp(2rem,7.8vw,3rem);max-width:none}
+ .blueprint-lead {font-size:1.05rem;margin-top:.7rem}
+ .blueprint-screw {height:clamp(150px,40vw,260px);width:112%;max-width:none;margin:.7rem -6%}
+ .blueprint-actions {gap:1rem 1.2rem}
+ .blueprint-actions .button {padding:.7rem 1rem}
+ .production-resources .wrap {grid-template-columns:1fr;padding-block:.25rem}
+ .production-resources a,.production-resources a:first-child,.production-resources a:last-child {padding:.8rem 0;border:0;border-bottom:1px solid var(--line);font-size:1rem}
+ .production-resources a:last-child {border-bottom:0}
+}
+
+.production-resources .visually-hidden {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.blueprint-screw {
+  mix-blend-mode:normal;
+  mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(transparent,#000 12%,#000 87%,transparent);
+  mask-composite:intersect;
+}
+
+/* Match the approved header quote hover on the homepage product action. */
+.blueprint-actions .product-explore-button {
+  position:relative;isolation:isolate;overflow:hidden;
+  background:#fff;color:var(--ink);border:1px solid var(--ink);box-shadow:none;
+  transition:color 180ms ease 100ms,border-color 250ms ease;
+}
+.blueprint-actions .product-explore-button::before {
+  content:"";position:absolute;inset:0 auto 0 0;width:5px;
+  background:var(--orange-text);z-index:0;
+  transition:width 420ms cubic-bezier(.22,.61,.36,1);
+}
+.blueprint-actions .product-explore-button > span {position:relative;z-index:1;}
+.blueprint-actions .product-explore-button:is(:hover,:focus-visible) {
+  background:#fff;color:#fff;border-color:var(--orange-text);
+}
+.blueprint-actions .product-explore-button:is(:hover,:focus-visible)::before {width:100%;}
+.blueprint-actions .product-explore-button:focus-visible {outline:2px solid var(--ink);outline-offset:4px;}
+@media(prefers-reduced-motion:reduce) {
+  .blueprint-actions .product-explore-button,.blueprint-actions .product-explore-button::before {transition:none;}
+}
+
+/* Masaüstünde ürün grupları kesilmeden 5×2 ızgara; tablet ve telefonda yana kaydırma kalır. */
+@media (min-width:901px){
+  .production-products .catalog-home-row.grid.product-row{grid-template-columns:repeat(5,minmax(0,1fr));grid-auto-flow:row;grid-auto-columns:auto;overflow:visible;padding-bottom:0;gap:.8rem}
+  .production-products .home-product-visual img{height:110px}
+}
+
+/* ===== Fabrika odaklı ana sayfa (24.11.2026) ===== */
+.factory-kicker{margin:0 0 .6rem;color:var(--orange-text);font-size:.8rem;font-weight:760;letter-spacing:.08em;text-transform:uppercase}
+.factory-hero{background:#f2f4f6;border-bottom:1px solid var(--line);padding-block:clamp(2rem,5vw,4.2rem)}
+.factory-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(1.6rem,4vw,3.6rem);align-items:center}
+.factory-hero h1{font-size:clamp(2.3rem,5vw,4.4rem);margin-bottom:.35em;letter-spacing:-.045em}
+.factory-lead{font-size:clamp(1.02rem,1.4vw,1.2rem);max-width:46ch;color:var(--ink);line-height:1.6}
+.factory-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.6rem}
+.factory-actions .button{font-size:1rem;padding:.8rem 1.25rem}
+.factory-button-secondary{background:#fff;color:var(--ink);border-color:var(--ink)}
+.factory-button-secondary:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.factory-hero-photo{position:relative;margin:0;border-radius:12px;overflow:hidden;box-shadow:0 22px 50px #1d2b3826;aspect-ratio:4/3;background:#d9dee3}
+.factory-hero-photo img{width:100%;height:100%;object-fit:cover}
+.factory-hero-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.6rem 1rem .8rem;color:#fff;font-size:.86rem;font-weight:650;background:linear-gradient(transparent,#141c24cc)}
+.factory-stats{background:#24313d;color:#fff}
+.factory-stats-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+.factory-stats-grid div{padding:1.4rem 1rem;border-left:1px solid #ffffff1f;display:flex;flex-direction:column;gap:.2rem}
+.factory-stats-grid div:first-child{border-left:0;padding-left:0}
+.factory-stats-grid strong{font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.1;color:#f2a654;letter-spacing:-.02em}
+.factory-stats-grid span{font-size:.9rem;color:#dfe5ea}
+.factory-machines,.factory-quality,.factory-custom,.factory-certificates,.factory-sectors{padding-block:clamp(2.4rem,5.5vw,4.6rem)}
+.factory-machines h2,.factory-quality h2,.factory-custom h2,.factory-certificates h2,.factory-sectors h2{font-size:clamp(1.6rem,3vw,2.4rem)}
+.factory-split{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(1.6rem,4vw,3.4rem);align-items:center}
+.factory-split-even{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch}
+.factory-photo{margin:0;border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:#d9dee3}
+.factory-photo img{width:100%;height:100%;object-fit:cover}
+.machine-list{list-style:none;margin:1.2rem 0 0;padding:0;display:grid;gap:.1rem}
+.machine-list li{display:grid;grid-template-columns:3.2rem 1fr;align-items:baseline;gap:.6rem;padding:.6rem 0;border-bottom:1px solid var(--line)}
+.machine-list strong{font-size:1.6rem;color:var(--orange-text);line-height:1}
+.machine-list span{color:var(--ink);font-weight:560}
+.factory-quality{background:#f7f8fa;border-block:1px solid var(--line)}
+.quality-steps{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.quality-steps li{background:#fff;border:1px solid var(--line);border-top:3px solid var(--orange);border-radius:8px;padding:1.2rem}
+.quality-step-no{display:block;font-size:1.9rem;font-weight:800;color:var(--orange-text);line-height:1;margin-bottom:.7rem}
+.quality-steps h3{margin:0 0 .35rem;font-size:1.1rem}
+.quality-steps p{margin:0;font-size:.95rem}
+.factory-custom{background:#24313d;color:#fff}
+.factory-custom h2{color:#fff}
+.factory-custom p{color:#dfe5ea;max-width:58ch}
+.factory-custom .factory-kicker{color:#f2a654}
+.factory-custom-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1.2rem 2rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.custom-gallery{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7rem}
+.custom-gallery li:first-child{grid-column:span 2;grid-row:span 2}
+.custom-gallery img{width:100%;height:100%;aspect-ratio:2/1;object-fit:cover;border-radius:8px;display:block}
+.custom-gallery li:first-child img{aspect-ratio:auto}
+.factory-certificates-inner{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,2fr);gap:2rem;align-items:center}
+.certificate-strip{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem}
+.certificate-strip a{display:flex;flex-direction:column;gap:.2rem;padding:.7rem;border:1px solid var(--line);border-radius:8px;background:#fff;text-decoration:none;color:var(--ink);height:100%}
+.certificate-strip a:hover{border-color:var(--orange)}
+.certificate-strip img{width:100%;height:150px;object-fit:contain;background:#f4f6f8;border-radius:4px;margin-bottom:.5rem}
+.certificate-strip span{font-weight:750}
+.certificate-strip small{color:var(--muted);font-size:.82rem}
+.factory-sectors{background:#f7f8fa;border-top:1px solid var(--line)}
+.sector-list{list-style:none;margin:1.2rem 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.sector-list li{padding:.85rem 1rem;background:#fff;border:1px solid var(--line);border-left:3px solid var(--orange);border-radius:6px;font-weight:650;color:var(--ink)}
+.export-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:clamp(1.3rem,3vw,2rem)}
+.export-number{color:var(--orange-text)}
+.export-countries{margin:.8rem 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;counter-reset:c}
+.export-countries li{counter-increment:c;padding:.45rem .8rem;border:1px solid #c3ccd4;border-radius:999px;font-weight:620;color:var(--ink)}
+.export-countries li::before{content:counter(c) " · ";color:var(--orange-text);font-weight:750}
+.factory-cta{background:var(--orange-text);color:#fff;padding-block:clamp(2rem,4.5vw,3.2rem)}
+.factory-cta h2{color:#fff;font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:.3rem}
+.factory-cta p{color:#fff3e6;margin:0}
+.factory-cta-inner{display:flex;justify-content:space-between;align-items:center;gap:1.2rem 2rem;flex-wrap:wrap}
+.factory-cta-actions{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem 1.1rem}
+.factory-cta .button{background:#24313d;border-color:#24313d}
+.factory-cta .button:hover{background:#111a22;border-color:#111a22}
+.factory-cta .factory-button-light{background:#fff;color:#1f7a3f;border-color:#fff}
+.factory-cta .factory-button-light:hover{background:#eefaf2;color:#1f7a3f;border-color:#fff}
+.factory-cta-phone{color:#fff;font-weight:750;text-underline-offset:4px}
+@media(max-width:900px){
+  .factory-hero-grid,.factory-split,.factory-split-even,.factory-certificates-inner{grid-template-columns:1fr}
+  .factory-stats-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .factory-stats-grid div:nth-child(4){border-left:0;padding-left:0}
+  .quality-steps,.certificate-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .custom-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:560px){
+  .factory-stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .factory-stats-grid div{border-left:0;padding-left:0;padding-block:1rem}
+  .quality-steps,.sector-list{grid-template-columns:1fr}
+  .certificate-strip img{height:120px}
+}
+.custom-gallery li:nth-child(n+6){grid-column:span 2}
+.custom-gallery li:nth-child(n+6) img{aspect-ratio:4.1/1}
+@media(max-width:900px){.custom-gallery li:nth-child(n+6){grid-column:auto}.custom-gallery li:nth-child(n+6) img{aspect-ratio:2/1}}
+/* Özel imalat: çizimden ürüne (A) */
+.factory-custom{background:#eef1f4;background-image:linear-gradient(#dfe4ea 1px,transparent 1px),linear-gradient(90deg,#dfe4ea 1px,transparent 1px);background-size:24px 24px;color:var(--ink);border-block:1px solid var(--line)}
+.factory-custom h2{color:var(--ink)}
+.factory-custom .factory-kicker{color:var(--orange-text)}
+.factory-custom .factory-custom-lead{color:var(--muted);max-width:60ch}
+.drawing-to-part{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:1.5rem;align-items:center;margin-top:1.6rem}
+.drawing-card{margin:0;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.drawing-card-media{position:relative;aspect-ratio:2/1;background:#f4f7fa;display:grid;place-items:center}
+.drawing-card-media img{width:100%;height:100%;object-fit:contain}
+.drawing-card-product{background:radial-gradient(circle at 50% 55%,#fff,#e9edf1)}
+.drawing-card-product img{width:88%;filter:drop-shadow(0 14px 14px #1d2b3833)}
+.drawing-card-tag{position:absolute;top:.9rem;left:1rem;font-size:.85rem;font-weight:750;color:var(--ink)}
+.drawing-card figcaption{padding:.75rem 1rem;font-weight:700;border-top:1px solid var(--line);color:var(--ink)}
+.drawing-arrow{font-size:2.4rem;color:var(--orange-text);line-height:1}
+.drawing-foot{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:1.6rem;flex-wrap:wrap}
+.drawing-thumbs{list-style:none;margin:0;padding:0;display:flex;gap:.5rem}
+.drawing-thumbs img{width:88px;height:44px;object-fit:cover;border-radius:4px;border:1px solid var(--line);display:block}
+@media(max-width:760px){.drawing-to-part{grid-template-columns:1fr}.drawing-arrow{transform:rotate(90deg);justify-self:center}.drawing-thumbs{display:none}}
+/* Rakam şeridi koyu turuncu (24.11.2026) */
+.factory-stats{background:var(--orange-text)}
+.factory-stats-grid strong{color:#fff}
+.factory-stats-grid span{color:#fff3e6}
+.factory-stats-grid div{border-left-color:#ffffff33}
+/* Makine parkı: fotoğraf zeminli (24.11.2026) */
+.factory-machines{position:relative;isolation:isolate;overflow:hidden;min-height:560px;display:flex;align-items:flex-end;padding-block:clamp(3rem,6vw,4.4rem) clamp(2rem,4vw,3rem);background:#141c24;color:#fff}
+.factory-machines-bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.factory-machines::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#141c2433 0%,#141c24d9 62%,#141c24f2 100%)}
+.factory-machines-inner{flex:none}
+.factory-machines h2{color:#fff;max-width:20ch}
+.factory-machines .factory-kicker{color:#f2b26b}
+.factory-machines-lead{color:#e6ebef;max-width:55ch}
+.machine-cards{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.7rem}
+.machine-cards li{background:#141c2499;border:1px solid #ffffff2e;border-radius:10px;padding:1rem;backdrop-filter:blur(6px)}
+.machine-cards strong{display:block;font-size:2.2rem;line-height:1;color:#fff}
+.machine-cards span{display:block;margin-top:.45rem;color:#eef2f5;font-size:.9rem;font-weight:600}
+@media(max-width:900px){.machine-cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.factory-machines{min-height:0}.machine-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.machine-cards li:first-child{grid-column:1/-1}}
+@media(max-width:560px){.factory-machines{padding-top:13rem}.factory-machines-bg{object-position:center top;height:100%}}
+/* Tek zeminli akış (24.11.2026): açık bölümler aynı zemin; turuncu şerit, makine parkı ve teklif bandı vurgu olarak kalır */
+.production-products,.factory-quality,.factory-custom,.factory-certificates,.factory-sectors{background:#f6f7f9;background-image:none;border:0}
+.production-resources{background:#f6f7f9;border-block:1px solid var(--line)}
+/* Aynı zeminli ardışık bölümlerde boşluk iki kez eklenmesin */
+.factory-quality+.factory-custom,.factory-custom+.factory-certificates,.factory-certificates+.factory-sectors{padding-top:clamp(.4rem,1.5vw,1rem)}

@@ -1,0 +1,217 @@
+.corporate-page {
+  --corporate-paper: #f1f4f6;
+  --corporate-line: #dce3e8;
+  --corporate-space: clamp(2.65rem, 6vw, 5.25rem);
+}
+.corporate-intro {
+  background: var(--corporate-paper);
+  border-bottom: 1px solid var(--corporate-line);
+  padding-block: 1.25rem var(--corporate-space);
+}
+.corporate-crumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin-bottom: clamp(1.55rem, 3vw, 2.6rem);
+  font-size: .83rem;
+}
+.corporate-crumb a { text-underline-offset: 3px; }
+.corporate-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr);
+  gap: clamp(1.75rem, 5vw, 5.5rem);
+  align-items: center;
+}
+.corporate-intro h1 {
+  margin: 0 0 .32em;
+  font-size: clamp(2.65rem, 6.2vw, 5.35rem);
+  letter-spacing: -.062em;
+}
+.corporate-intro-copy > p {
+  max-width: 42ch;
+  margin-bottom: 1.45rem;
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
+}
+.corporate-facility {
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #d8dfe4;
+}
+.corporate-facility img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.68;
+  object-fit: cover;
+  object-position: center 57%;
+}
+.corporate-facility figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 1.8rem 1rem .73rem;
+  background: linear-gradient(transparent, #19242ce6);
+  color: white;
+  font-size: .81rem;
+  font-weight: 670;
+}
+.corporate-profile,.corporate-values {
+  display: grid;
+  grid-template-columns: minmax(0, .65fr) minmax(0, 1.35fr);
+  gap: clamp(1rem, 4vw, 3.5rem);
+  padding-block: var(--corporate-space);
+}
+.corporate-profile h2,.corporate-values h2 { margin: 0; }
+.corporate-profile p { max-width: 63ch; }
+.corporate-profile a { display: inline-block; margin-top: .25rem; }
+.corporate-direction {
+  color: #f6f8fa;
+  background: #242d36;
+  scroll-margin-top: 1rem;
+}
+.corporate-direction-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding-block: clamp(2rem, 4.4vw, 3.85rem);
+}
+.corporate-direction article { padding-inline-end: clamp(1rem, 5vw, 4.25rem); }
+.corporate-direction article + article {
+  border-inline-start: 1px solid #68737e;
+  padding-inline: clamp(1rem, 5vw, 4.25rem) 0;
+}
+.corporate-direction h2 {
+  font-size: clamp(1.55rem, 3.2vw, 2.45rem);
+  margin: 0 0 .55rem;
+}
+.corporate-direction h2::before {
+  display: block;
+  content: "";
+  width: 2rem;
+  margin-bottom: .95rem;
+  border-top: 2px solid #e48722;
+}
+.corporate-direction p { margin: 0; max-width: 49ch; color: #e0e7ed; }
+.corporate-values ul {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 0 1.6rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.corporate-values li {
+  display: grid;
+  grid-template-columns: .42rem minmax(0, 1fr);
+  align-items: start;
+  gap: .62rem;
+  padding: .85rem 0;
+  border-top: 1px solid var(--corporate-line);
+  color: var(--ink);
+  font-weight: 610;
+}
+.corporate-values li::before {
+  content: "";
+  margin-top: .6rem;
+  width: .36rem;
+  height: .36rem;
+  border-radius: 50%;
+  background: var(--orange);
+}
+.corporate-certificates {
+  padding-block: var(--corporate-space);
+  background: var(--corporate-paper);
+  border-top: 1px solid var(--corporate-line);
+}
+.corporate-certificates-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  align-items: end;
+  gap: .65rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.corporate-certificates-heading h2,.corporate-certificates-heading p { margin: 0; }
+.corporate-certificates-heading p { max-width: 47ch; }
+.corporate-certificates #belgeler { scroll-margin-top: 1.2rem; }
+.corporate-certificates .certificate { background: #fff; }
+.corporate-certificates .certificate-preview { background: #fafbfc; padding-block: 1.05rem; }
+.corporate-certificates .certificate-preview:hover { background: #eef2f5; }
+.corporate-certificates .certificate-preview img { height: clamp(155px, 15vw, 210px); }
+.corporate-certificates .certificate figcaption { border-top: 1px solid var(--corporate-line); }
+@media (max-width: 760px) {
+  .corporate-intro-grid,.corporate-profile,.corporate-values,.corporate-certificates-heading {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+}
+@media (max-width: 520px) {
+  .corporate-direction-grid,.corporate-values ul { grid-template-columns: 1fr; }
+  .corporate-direction article { padding: 0; }
+  .corporate-direction article + article {
+    margin-top: 1.25rem;
+    padding: 1.25rem 0 0;
+    border-inline-start: 0;
+    border-top: 1px solid #68737e;
+  }
+  .corporate-facility img { aspect-ratio: 1.48; }
+  .corporate-certificates .certificate-preview img { height: 145px; }
+}
+
+.certificate-actions {display:flex;flex-wrap:wrap;gap:.6rem 1rem;margin-top:.7rem;font-size:.85rem;font-weight:650}
+.certificate-actions a,.certificate-package a {text-underline-offset:3px}
+.certificate-package {display:flex;flex-wrap:wrap;gap:.65rem 1.5rem;margin:0 0 1.25rem;font-weight:650}
+
+/* Sürdürülebilirlik bölümü (24.11.2026: ayrı sayfadan kurumsal sayfaya taşındı) */
+.corporate-sustainability{padding-block:var(--corporate-space,clamp(2.25rem,5vw,4.2rem))}
+.corporate-sustainability-lead{max-width:62ch;margin-bottom:1.4rem}
+.sustainability-principles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(.95rem, 2.5vw, 1.65rem);
+  padding-block: var(--sustain-space);
+}
+.sustainability-principles article { min-width: 0; }
+.sustainability-principles img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2.05;
+  object-fit: cover;
+  object-position: center 58%;
+  border-radius: 8px;
+  background: var(--sustain-paper);
+}
+.sustainability-principles article:last-child img {
+  object-fit: cover;
+  object-position: center;
+  background: var(--sustain-paper);
+}
+.sustainability-principles h2 {
+  margin: .8rem 0 .42rem;
+  font-size: clamp(1.28rem, 2.3vw, 1.75rem);
+}
+.sustainability-principles p { max-width: 38ch; margin: 0; }
+.corporate-sustainability .sustainability-principles{padding-block:0}
+.corporate-sustainability .sustainability-principles h3{margin:.8rem 0 .42rem;font-size:clamp(1.15rem,2vw,1.45rem)}
+@media (max-width:640px){.corporate-sustainability .sustainability-principles{grid-template-columns:1fr;gap:1.7rem}}
+
+/* Tesis galerisi ve zaman çizelgesi */
+.corporate-facility{padding-block:var(--corporate-space,clamp(2.25rem,5vw,4.2rem));background:#f7f8fa;border-block:1px solid var(--line)}
+.corporate-facility-lead{max-width:66ch;margin-bottom:1.4rem}
+.facility-gallery{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:.8rem}
+.facility-gallery figure{margin:0;position:relative;border-radius:10px;overflow:hidden;height:100%;aspect-ratio:4/3;background:#d9dee3}
+.facility-gallery img{width:100%;height:100%;object-fit:cover}
+.facility-gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.4rem .9rem .7rem;color:#fff;font-size:.88rem;font-weight:650;background:linear-gradient(transparent,#141c24cc)}
+.corporate-timeline{padding-block:var(--corporate-space,clamp(2.25rem,5vw,4.2rem))}
+.timeline{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.8rem;position:relative}
+.timeline::before{content:"";position:absolute;left:0;right:0;top:.55rem;border-top:2px solid var(--line)}
+.timeline li{position:relative;padding-top:1.6rem}
+.timeline li::before{content:"";position:absolute;top:.15rem;left:0;width:.8rem;height:.8rem;border-radius:50%;background:var(--orange)}
+.timeline li:last-child::before{background:#24313d}
+.timeline strong{display:block;font-size:1.35rem;color:var(--orange-text);line-height:1.1}
+.timeline span{display:block;margin-top:.3rem;font-size:.92rem;color:var(--ink)}
+@media(max-width:900px){.facility-gallery{grid-template-columns:1fr 1fr}.facility-gallery li:first-child{grid-column:1/-1}.timeline{grid-template-columns:1fr;gap:0}.timeline::before{left:.35rem;right:auto;top:0;bottom:0;border-top:0;border-left:2px solid var(--line)}.timeline li{padding:0 0 1.1rem 1.8rem}.timeline li::before{top:.35rem}}
+.facility-gallery li{min-width:0}
+.facility-gallery figure{height:auto;aspect-ratio:auto}
+.facility-gallery img{aspect-ratio:4/3;display:block}

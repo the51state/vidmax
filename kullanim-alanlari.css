@@ -1,0 +1,28 @@
+
+.application-preview .catalogue-category-intro {padding-block:1.25rem 2rem}
+.application-preview .category-intro-grid {grid-template-columns:minmax(0,1.7fr) minmax(200px,.7fr)}
+.application-preview .category-intro-grid h1 {font-size:clamp(2.1rem,4vw,3.5rem)}
+.application-preview .category-feature-image {min-height:160px;padding:1rem}
+.application-preview .category-feature-image img {height:130px}
+.application-preview .model-list {padding-block:2rem 3rem}
+.application-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem;list-style:none;margin:0;padding:0}
+.application-card {display:flex;flex-direction:column;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;height:100%}
+.application-card-top {display:grid;grid-template-columns:150px minmax(0,1fr);align-items:center;gap:1.15rem;padding:1.2rem 1.3rem;background:#f4f6f8;border-bottom:1px solid var(--line)}
+.application-card-top img {width:150px;height:105px;object-fit:contain;mix-blend-mode:multiply}
+.application-card h3 {font-size:1.5rem;line-height:1.15;letter-spacing:-.025em;margin:0 0 .35rem}
+.application-card h3 a {text-decoration:none}.application-card h3 a:hover {color:var(--orange-text)}
+.application-card-top p {font-size:.9rem;margin:0}
+.application-card-body {display:flex;flex-direction:column;flex:1;padding:1.2rem 1.3rem}
+.application-label {color:var(--orange-text);font-weight:750;font-size:.8rem;letter-spacing:.045em;margin-bottom:.8rem}
+.application-card ul {list-style:disc;padding-left:1.15rem;margin:0 0 1rem}
+.application-card li {padding-left:.15rem;margin-bottom:.8rem;font-size:.97rem;line-height:1.6;color:var(--muted)}
+.application-card li::marker {color:var(--orange-text)}
+.application-card li strong {color:var(--ink)}
+.application-card-links {display:flex;gap:1rem;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:.9rem;margin-top:auto;font-size:.9rem}
+.application-card-links a {font-weight:700;text-underline-offset:4px}
+.application-card-links .application-pdf {color:var(--muted);font-size:.85rem}
+@media(max-width:850px){.application-preview .category-intro-grid{grid-template-columns:1fr}.application-preview .category-feature-image{display:none}.application-card-top{grid-template-columns:110px minmax(0,1fr);gap:.75rem;padding:1rem}.application-card-top img{width:110px;height:85px}.application-card-body{padding:1rem}}
+@media(max-width:640px){.application-grid{grid-template-columns:1fr}.application-preview .model-list-heading{align-items:flex-start}.application-preview .model-list-heading h2{font-size:1.8rem}.application-card h3{font-size:1.35rem}}
+
+.application-preview .application-card li:last-child {margin-bottom:0}
+.catalog-applications li::marker{color:var(--orange-text)}.catalog-applications li strong{color:var(--ink)}

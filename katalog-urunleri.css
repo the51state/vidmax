@@ -1,0 +1,17 @@
+.catalog-category-grid{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:1.5rem}.catalog-category-grid img{height:145px;padding:1rem;object-fit:contain}.catalog-home-row.grid.product-row{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:155px;overflow-x:auto;padding-bottom:.65rem;scroll-snap-type:x proximity}.catalog-home-row .product-card{scroll-snap-align:start}.catalog-applications,.catalog-dimensions{padding-block:2rem}.catalog-applications ul{padding-left:1.2rem;max-width:85ch}.catalog-applications li{margin-block:.65rem}.catalog-table{margin:1.2rem 0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:white}.catalog-table img{width:100%;height:auto}.catalog-stainless{margin:2rem 0;max-width:900px}.catalog-stainless img{width:100%;height:auto}.catalog-legacy-link{margin-top:1.5rem}.menu-categories{max-height:55vh;overflow-y:auto}@media(max-width:900px){.catalog-category-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:600px){.catalog-category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.catalog-category-grid img{height:110px}.catalog-table{overflow-x:auto}.catalog-table img{max-width:none;width:max(100%,700px)}.catalog-applications,.catalog-dimensions{padding-block:1.5rem}}
+.catalog-drawing{padding-block:2rem}.catalog-drawing img{width:min(100%,500px);height:auto}.stainless-families{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem;margin-bottom:2rem}.stainless-families article{background:var(--soft);padding:1.2rem;border-radius:8px}.stainless-families h2{font-size:1.4rem;margin-top:0}.stainless-families li{margin-bottom:.6rem}@media(max-width:640px){.stainless-families{grid-template-columns:1fr}}
+
+/* Katalogdan aktarılan ölçü ve ağırlık tabloları */
+.data-table-scroll{overflow-x:auto;margin:1rem 0 .6rem;border:1px solid var(--line);border-radius:8px;background:#fff}
+.data-table-scroll:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.data-table{border-collapse:collapse;width:100%;font-size:.86rem;font-variant-numeric:tabular-nums;color:var(--ink)}
+.data-table caption{caption-side:top;text-align:left;padding:.7rem .8rem;font-weight:750;font-size:.9rem;background:#fff5e8;border-bottom:1px solid var(--line)}
+.data-table th,.data-table td{border:1px solid var(--line);padding:.42rem .55rem;text-align:center;white-space:nowrap;line-height:1.25}
+.data-table thead th{background:#24313d;color:#fff;font-weight:700}
+.data-table tbody tr:nth-child(even) td{background:#f7f8fa}
+.data-table tbody td:first-child{font-weight:650;text-align:left}
+.data-table .data-note{white-space:normal;text-align:left;font-size:.8rem;color:var(--muted);background:#fff !important}
+.data-table sub{font-size:.7em}
+.catalog-table-image{margin:.2rem 0 1.6rem}
+.catalog-table-image summary{cursor:pointer;font-size:.88rem;font-weight:650;color:var(--orange-text);width:fit-content}
+.catalog-table-image figure{margin:.8rem 0 0}

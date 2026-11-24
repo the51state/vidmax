@@ -1,0 +1,57 @@
+.custom-manufacturing {padding-block:clamp(1.6rem, 4vw, 3.4rem)}
+.custom-intro {
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);
+  align-items:center;
+  gap:clamp(1rem, 4vw, 3rem);
+}
+.custom-intro h1 {font-size:clamp(2.2rem, 4.6vw, 4.45rem);margin-bottom:.38em;overflow-wrap:anywhere}
+.custom-intro p {max-width:51ch;margin-bottom:1.2rem}
+.custom-drawing {
+  margin:0;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:var(--soft);
+}
+.custom-drawing > a {
+  display:block;
+  overflow:hidden;
+  aspect-ratio:1093 / 366;
+  margin:.8rem .8rem 0;
+  border:1px solid var(--line);
+  border-radius:6px;
+  background:#fff;
+}
+.custom-drawing img {width:100%;height:auto}
+.custom-drawing figcaption {display:flex;flex-wrap:wrap;justify-content:space-between;gap:.35rem .75rem;padding:.75rem 1rem}
+.custom-requirements {margin-top:clamp(1.8rem,4vw,3.4rem)}
+.custom-requirements h2,.custom-faq h2 {font-size:clamp(1.4rem,3vw,2.25rem)}
+.custom-requirements ul {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:.75rem;
+  padding:0;
+  margin:0 0 .8rem;
+  list-style:none;
+}
+.custom-requirements li {padding:.9rem 1rem;border:1px solid var(--line);border-radius:8px;border-top:3px solid var(--orange)}
+.custom-requirements li p {margin:.3rem 0 0}
+.custom-faq {margin-top:1.4rem;padding:clamp(1rem,3vw,1.5rem);background:var(--soft);border-radius:9px}
+.custom-faq p {margin:0}
+@media (max-width:720px) {
+  .custom-intro,.custom-requirements ul {grid-template-columns:1fr}
+}
+
+.custom-drawing img {height:auto;max-height:520px;object-fit:contain}
+
+/* Özel parça örnekleri */
+.custom-examples{margin-block:clamp(2rem,4vw,3rem)}
+.custom-examples h2{font-size:clamp(1.5rem,2.8vw,2.2rem)}
+.custom-examples-grid{list-style:none;margin:1.2rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem}
+.custom-examples-grid img{width:100%;aspect-ratio:2/1;object-fit:cover;border-radius:8px;display:block}
+.custom-examples-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.custom-examples-grid li{min-width:0}
+.custom-examples-grid li:first-child{grid-column:span 2}
+.custom-examples-grid img{height:auto;max-height:none}
+.custom-examples-grid li:first-child img{aspect-ratio:4.1/1;height:100%}
+@media(max-width:700px){.custom-examples-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.custom-examples-grid li:first-child img{aspect-ratio:2/1}}

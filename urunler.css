@@ -1,0 +1,134 @@
+.product-catalogue {
+  --product-paper: #f1f4f6;
+  --product-space: clamp(2.3rem, 5.6vw, 4.65rem);
+}
+.catalogue-category-intro {
+  background: var(--product-paper);
+  border-bottom: 1px solid var(--line);
+  padding-block: 1.2rem clamp(1.75rem, 4vw, 3.2rem);
+}
+.catalogue-crumb {
+  margin: 0 0 clamp(1.2rem, 3vw, 2rem);
+  font-size: .83rem;
+}
+.catalogue-crumb a { text-underline-offset: 3px; }
+.category-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, .75fr);
+  align-items: center;
+  gap: clamp(1.2rem, 4vw, 3.1rem);
+}
+.category-intro-grid h1,.model-detail-copy h1 {
+  margin: 0 0 .33em;
+  font-size: clamp(2.35rem, 5vw, 4.7rem);
+  letter-spacing: -.055em;
+}
+.category-intro-grid h1::before {
+  content: "";
+  display: block;
+  width: 2.1rem;
+  margin-bottom: .7rem;
+  border-top: 2px solid var(--orange);
+}
+.category-intro-grid p,.model-detail-copy > p:not(.model-detail-number) {
+  max-width: 57ch;
+  margin-bottom: 0;
+  font-size: clamp(1rem, 1.55vw, 1.13rem);
+}
+.category-feature-image,.model-detail-image {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: clamp(.9rem, 3vw, 2.35rem);
+}
+.category-feature-image { min-height: 180px; }
+.category-feature-image img { width: 100%; height: clamp(112px, 13vw, 180px); object-fit: contain; }
+.model-list { padding-block: var(--product-space); }
+.model-list-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: .65rem 1rem;
+  margin-bottom: 1.25rem;
+}
+.model-list-heading h2,.model-list-heading .actions { margin: 0; }
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .95rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.model-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  text-decoration: none;
+}
+.model-card:hover,.model-card:focus-visible { border-color: var(--orange); }
+.model-image {
+  display: grid;
+  place-items: center;
+  background: #f5f7f8;
+  padding: .9rem 1.1rem;
+  min-width: 0;
+}
+.model-image img { width: 100%; height: clamp(83px, 9vw, 132px); object-fit: contain; mix-blend-mode: multiply; }
+.model-caption {
+  flex: 1;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: .55rem;
+  min-height: 4.1rem;
+  border-top: 1px solid var(--line);
+  padding: .75rem .85rem;
+  line-height: 1.28;
+}
+.model-caption strong { font-size: .94rem; }
+.model-number { display: block; margin-top: .3rem; color: var(--muted); font-size: .77rem; }
+.model-arrow { color: var(--orange-text); }
+.model-detail-intro { padding-block: 1.2rem var(--product-space); }
+.model-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: clamp(1.2rem, 5vw, 4.3rem);
+  align-items: center;
+}
+.model-detail-image { order: -1; background: #f5f7f8; }
+.model-detail-image img { width: 100%; height: clamp(155px, 23vw, 310px); object-fit: contain; mix-blend-mode: multiply; }
+.model-detail-copy h1 { font-size: clamp(2rem, 4vw, 3.8rem); }
+.model-detail-number { color: var(--orange-text); margin: 0 0 .45rem; font-size: .84rem; font-weight: 700; }
+.model-specification { border-top: 1px solid var(--line); background: var(--product-paper); }
+.model-specification-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
+  gap: clamp(1.15rem, 4vw, 3.1rem);
+  align-items: start;
+  padding-block: var(--product-space);
+}
+.model-specification-grid .specs { max-width: none; background: white; border: 1px solid var(--line); }
+.model-specification-grid .specs th,.model-specification-grid .specs td { padding: .75rem 1rem; }
+.model-specification-grid .specs th { width: 34%; background: #fafbfc; }
+@media (max-width: 900px) {
+  .model-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+}
+@media (max-width: 660px) {
+  .category-intro-grid,.model-detail-grid,.model-specification-grid { grid-template-columns: 1fr; }
+  .model-detail-image { order: 0; }
+  .model-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: .65rem; }
+  .model-caption { padding: .62rem; }
+  .model-caption strong { font-size: .86rem; }
+  .model-image { padding: .55rem; }
+  .model-specification-grid .specs th,.model-specification-grid .specs td { padding: .62rem; }
+}
+
+.model-specification:target {scroll-margin-top:7rem}
